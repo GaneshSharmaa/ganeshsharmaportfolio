@@ -26,6 +26,36 @@ body {
 	line-height: 1.6;
 }
 
+.section-hero {
+  	padding: 80px 20px;
+}
+
+.container-hero-grid {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+	max-width: 900px;
+	margin: auto;
+}
+
+.profile-img {
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.hero-text h1 {
+	font-size: 50px;
+	margin-bottom: 8px;
+}
+
+.hero-text h2 {
+	font-weight: 400;
+	color: #555;
+	margin-bottom: 12px;
+}
+
 body.nav-open {
 	overflow: hidden;
 }
@@ -531,7 +561,7 @@ h3 {
 	}
 }
 
-@media (prefers-reduced-motion: reduce) {
+/* @media (prefers-reduced-motion: reduce) {
 	html {
 		scroll-behavior: auto;
 	}
@@ -541,9 +571,9 @@ h3 {
 	*::after {
 		transition: none !important;
 	}
-}
+
 	font-weight: 600;
-}
+} */
 
 .section {
 	margin-top: 2.1rem;
