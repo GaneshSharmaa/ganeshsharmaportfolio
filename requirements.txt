@@ -1,0 +1,5 @@
+fastapi[standard]
+uvicorn
+jinja2
+flask
+starlette

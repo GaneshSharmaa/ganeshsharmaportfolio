@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}
+Ganesh Sharma | AI Engineer & Python Backend Developer
+{% endblock %}
+
+{% block content %}
+
+<nav class="navbar">
+
+    <div class="logo">
+        Ganesh Sharma
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#connect">Connect</a></li>
+    </ul>
+
+</nav>
+
+<section class="hero">
+
+    <div class="hero-image">
+
+        <img
+            src="/static/assets/profile.jpg"
+            alt="Ganesh Sharma"
+        >
+
+    </div>
+
+    <div class="hero-content">
+
+        <h1>
+            AI Engineer &
+            Python Backend Developer
+        </h1>
+
+        <p class="hero-text">
+            Building production-focused AI systems
+            using LLMs, FastAPI, and Python.
+            Interested in backend engineering,
+            retrieval systems, local LLMs,
+            and applied machine learning.
+        </p>
+
+        <div class="tags">
+
+            <span>LLMs</span>
+            <span>Prompt Engineering</span>
+            <span>OpenAI APIs</span>
+            <span>Gemini APIs</span>
+            <span>FastAPI</span>
+            <span>SQL</span>
+            <span>Docker</span>
+            <span>Git/GitHub</span>
+            <span>Ollama</span>
+            <span>Local Models</span>
+            <span>Pandas</span>
+            <span>Scikit-learn</span>
+
+        </div>
+
+        <div class="buttons">
+
+            <a
+                class="btn primary"
+                href="#projects"
+            >
+                View Projects
+            </a>
+
+            <a
+                class="btn secondary"
+                href="/static/assets/Ganesh-Resume.pdf"
+                target="_blank"
+            >
+                Resume
+            </a>
+
+            <a
+                class="btn secondary"
+                href="YOUR_GITHUB_LINK"
+                target="_blank"
+            >
+                GitHub
+            </a>
+
+            <a
+                class="btn secondary"
+                href="YOUR_LINKEDIN_LINK"
+                target="_blank"
+            >
+                LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
