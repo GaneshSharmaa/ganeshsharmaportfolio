@@ -2,22 +2,19 @@
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from fastapi.exceptions import HTTPException
-from pathlib import Path
-
-BASE_DIR = Path(__file__).resolve().parent
+from fastapi import HTTPException
 
 # importing the modules from other files
-from app.data.projects import projects
+from data.projects import projects
 
 # initializing the app
 app = FastAPI()
 
 # serve static files
-app.mount("/static", StaticFiles(directory = BASE_DIR / "static"), name = "static")
+app.mount("/static", StaticFiles(directory = "static/"), name = "static")
 
 # template directory
-templates = Jinja2Templates(directory = BASE_DIR / "templates")
+templates = Jinja2Templates(directory = "templates/")
 
 # home route
 @app.get("/")
