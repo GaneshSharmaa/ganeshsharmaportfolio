@@ -5,35 +5,52 @@ Ganesh Sharma | AI Engineer & Python Backend Developer
 {% endblock %}
 
 {% block content %}
-
 <nav class="navbar">
-
     <div class="logo">
-        Ganesh Sharma
+        <a id="navbar-logo" href = "https://ganeshsharma.tech">
+            Ganesh Sharma
+        </a>
     </div>
 
     <ul class="nav-links">
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#connect">Connect</a></li>
-    </ul>
+        <li>
+            <a href="#projects">
+                Projects
+            </a>
+        </li>
 
+        <li>
+            <a href="#skills">
+                Skills
+            </a>
+        </li>
+
+        <li>
+            <a href="#about">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="#connect">
+                Connect
+            </a>
+        </li>
+
+        <li>
+            <a href="/static/assets/Ganesh-Resume.pdf" target="_blank">
+                Resume
+            </a>
+        </li>
+    </ul>
 </nav>
 
 <section class="hero">
-
     <div class="hero-image">
-
-        <img
-            src="/static/assets/profile.jpg"
-            alt="Ganesh Sharma"
-        >
-
+        <img src="/static/assets/profile.jpg" alt="Ganesh Sharma">
     </div>
 
     <div class="hero-content">
-
         <h1>
             AI Engineer &
             Python Backend Developer
@@ -41,66 +58,217 @@ Ganesh Sharma | AI Engineer & Python Backend Developer
 
         <p class="hero-text">
             Building production-focused AI systems
-            using LLMs, FastAPI, and Python.
+            using existing LLM models, FastAPI, and Python.
             Interested in backend engineering,
             retrieval systems, local LLMs,
             and applied machine learning.
         </p>
 
         <div class="tags">
-
-            <span>LLMs</span>
-            <span>Prompt Engineering</span>
-            <span>OpenAI APIs</span>
-            <span>Gemini APIs</span>
-            <span>FastAPI</span>
-            <span>SQL</span>
-            <span>Docker</span>
-            <span>Git/GitHub</span>
-            <span>Ollama</span>
-            <span>Local Models</span>
-            <span>Pandas</span>
-            <span>Scikit-learn</span>
-
+            <span>AI / LLM APIs</span>
+            <span>AI Frameworks</span>
+            <span>Retrieval Systems</span>
+            <span>Data & Machine Learning</span>
+            <span>Database & Caching</span>
+            <span>Version Control / Containerization / CI/CD</span>
         </div>
 
         <div class="buttons">
-
-            <a
-                class="btn primary"
-                href="#projects"
-            >
+            <a class="btn primary "href="#projects">
                 View Projects
             </a>
 
-            <a
-                class="btn secondary"
-                href="/static/assets/Ganesh-Resume.pdf"
-                target="_blank"
-            >
+            <a class="btn secondary" href="/static/assets/Ganesh-Resume.pdf" target="_blank">
                 Resume
             </a>
 
-            <a
-                class="btn secondary"
-                href="YOUR_GITHUB_LINK"
-                target="_blank"
-            >
+            <a class="btn secondary" href="https://github.com/GaneshSharmaa" target="_blank">
                 GitHub
             </a>
 
-            <a
-                class="btn secondary"
-                href="YOUR_LINKEDIN_LINK"
-                target="_blank"
-            >
+            <a class="btn secondary" href="https://www.linkedin.com/in/ganeshsharmaa/" target="_blank">
                 LinkedIn
             </a>
-
         </div>
-
     </div>
-
 </section>
 
+<section id="projects" class="projects-section">
+    <h2>
+        Featured Projects
+    </h2>
+
+    <div class="projects-grid">
+        {% for project in projects %}
+        <div class="project-card">
+            <h3>
+                {{ project.title }}
+            </h3>
+
+            <p>
+                {{ project.description }}
+            </p>
+
+            <div class="project-tags">
+                {% for tech in project.tech_stack %}
+                    <span>{{ tech }}</span>
+                {% endfor %}
+            </div>
+
+            <div class="project-buttons">
+                <a class="btn primary" href="/projects/{{ project.slug }}">
+                    Read More
+                </a>
+
+                <a class="btn secondary" href="{{ project.github }}" target="_blank">
+                    GitHub
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section id="skills" class="skills-section">
+    <h2>
+        Tech Stack / Frameworks / Skills
+    </h2>
+
+    <div class="skills-grid">
+        <div class="skill-group">
+            <h3>Languages</h3>
+            <div class="tags">
+                <span>Python</span>
+                <span>JavaScript</span>
+            </div>
+        </div>
+        
+        <div class="skill-group">
+            <h3>Databases</h3>
+            <div class="tags">
+                <span>MySQL</span>
+                <span>PostgreSQL</span>
+                <span>Redis (Caching)</span>
+                <span>Pinecone (Vector DB)</span>
+                <span>ChromaDB (Vector DB)</span>
+            </div>
+        </div>
+
+        <div class="skill-group">
+            <h3>AI / LLM</h3>
+            <div class="tags">
+                <span>LLMs</span>
+                <span>Prompt Engineering</span>
+                <span>Retrieval Augmented Generation (RAG)</span>
+                <span>Vector Embeddings</span>
+                <span>OpenAI API</span>
+                <span>Gemini API</span>
+                <span>Hugging Face Inference API</span>
+                <span>Ollama</span>
+                <span>Local Models</span>
+                <span>Hugging Face</span>
+            </div>
+        </div>
+
+        <div class="skill-group">
+            <h3>Backend</h3>
+
+            <div class="tags">
+                <span>FastAPI</span>
+                <span>REST APIs</span>
+                <span>Jinja2</span>
+                <span>Docker</span>
+            </div>
+        </div>
+
+        <div class="skill-group">
+            <h3>ML / Data</h3>
+
+            <div class="tags">
+                <span>Scikit-learn</span>
+                <span>Pandas</span>
+                <span>NumPy</span>
+                <span>Matplotlib</span>
+                <span>Data Processing</span>
+                <span>Model Evaluation</span>
+            </div>
+        </div>
+
+        <div class="skill-group">
+            <h3>Tools</h3>
+            <div class="tags">
+                <span>Git</span>
+                <span>GitHub</span>
+                <span>VS Code</span>
+                <span>Linux</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about-section">
+    <h2>
+        About Me
+    </h2>
+
+    <div class="about-content">
+        <p>
+            I’m an aspiring AI Engineer and
+            Python Backend Developer focused
+            on building practical systems using
+            LLMs, FastAPI, and machine learning.
+
+            I enjoy working on AI-powered
+            applications, backend APIs,
+            document intelligence systems,
+            and production-oriented projects
+            that solve real-world problems.
+        </p>
+
+        <p>
+            Currently, I’m strengthening my
+            skills through hands-on projects in
+            retrieval systems, local LLMs,
+            document processing, and applied
+            machine learning while building a
+            strong backend engineering foundation.
+        </p>
+    </div>
+</section>
+
+<section id="connect" class="connect-section">
+    <h2>
+        Let's Connect
+    </h2>
+
+    <p>
+        Open to internships,
+        backend engineering roles,
+        and AI-related opportunities.
+    </p>
+
+    <div class="connect-buttons">
+        <a class="btn primary" href="mailto: ganesh27sharma09@gmail.com">
+            Email
+        </a>
+
+        <a class="btn secondary" href="https://github.com/GaneshSharmaa" target="_blank">
+            GitHub
+        </a>
+
+        <a class="btn secondary" href="https://www.linkedin.com/in/ganeshsharmaa/" target="_blank">
+            LinkedIn
+        </a>
+
+        <a class="btn secondary" href="https://x.com/Ganesh_Sharmaa" target="_blank">
+            X
+        </a>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>
+        © 2026 Ganesh Sharma
+    </p>
+</footer>
 {% endblock %}
