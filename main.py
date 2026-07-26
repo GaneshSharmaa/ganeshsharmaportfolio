@@ -17,7 +17,7 @@ app.mount("/static", StaticFiles(directory = "static/"), name = "static")
 templates = Jinja2Templates(directory = "templates/")
 
 # home route
-@app.get("/")
+@app.get("/", include_in_schema = False)
 async def home(request: Request):
     return templates.TemplateResponse(
         request = request,
@@ -27,7 +27,7 @@ async def home(request: Request):
         }
     )
 
-@app.get("/projects/{slug}")
+@app.get("/projects/{slug}", include_in_schema = False)
 async def project_page(request: Request, slug: str):
     project = next(
         (
