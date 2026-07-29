@@ -8,7 +8,7 @@ from fastapi import HTTPException
 from data.projects import projects
 
 # initializing the app
-app = FastAPI()
+app = FastAPI(docs_url = None, redoc_url = None, openapi_url = None)
 
 # serve static files
 app.mount("/static", StaticFiles(directory = "static/"), name = "static")
