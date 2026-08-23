@@ -1,274 +1,1088 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}
-Ganesh Sharma | AI Engineer & Python Backend Developer
-{% endblock %}
+<head>
 
-{% block content %}
-<nav class="navbar">
-    <div class="logo">
-        <a id="navbar-logo" href = "https://ganeshsharma.tech">
-            Ganesh Sharma
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='output.css') }}"
+    >
+
+    <link
+        rel="shortcut icon"
+        href="{{ url_for('static', path='assets/favicon.ico') }}"
+        type="image/x-icon"
+    >
+
+    <title>
+        {{ portfolio.name }} — SDE Portfolio
+    </title>
+
+</head>
+
+
+<body
+    class="
+        min-h-screen
+        bg-[linear-gradient(110deg,#7162b5_0%,#302b50_35%,#080808_75%,#000000_100%)]
+        bg-fixed
+        text-white
+    "
+>
+
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+
+<header
+    class="
+        sticky
+        top-0
+        z-50
+        border-b
+        border-white/10
+        bg-black/20
+        backdrop-blur-xl
+    "
+>
+
+    <nav
+        class="
+            mx-auto
+            flex
+            max-w-7xl
+            flex-wrap
+            items-center
+            justify-between
+            gap-4
+            px-6
+            py-4
+            md:px-10
+        "
+    >
+
+        <a
+            href="#"
+            class="
+                text-xl
+                font-extrabold
+                tracking-tight
+                md:text-2xl
+            "
+        >
+            {{ portfolio.name }}
         </a>
-    </div>
 
-    <ul class="nav-links">
-        <li>
-            <a href="#projects">
-                Projects
-            </a>
-        </li>
 
-        <li>
-            <a href="#skills">
-                Skills
-            </a>
-        </li>
+        <ul
+            class="
+                flex
+                flex-wrap
+                items-center
+                justify-center
+                gap-x-5
+                gap-y-2
+                text-sm
+                font-medium
+                text-white/80
+                md:gap-x-7
+                md:text-base
+            "
+        >
 
-        <li>
-            <a href="#about">
-                About
-            </a>
-        </li>
+            <li>
+                <a
+                    href="#projects"
+                    class="transition hover:text-indigo-300"
+                >
+                    Projects
+                </a>
+            </li>
 
-        <li>
-            <a href="#connect">
-                Connect
-            </a>
-        </li>
+            <li>
+                <a
+                    href="#skills"
+                    class="transition hover:text-indigo-300"
+                >
+                    Skills
+                </a>
+            </li>
 
-        <li>
-            <a href="/static/assets/Ganesh-Resume.pdf" target="_blank">
-                Resume
-            </a>
-        </li>
-    </ul>
-</nav>
+            <li>
+                <a
+                    href="#about"
+                    class="transition hover:text-indigo-300"
+                >
+                    About Me
+                </a>
+            </li>
 
-<section class="hero">
-    <div class="hero-image">
-        <img src="/static/assets/profile.jpg" alt="Ganesh Sharma">
-    </div>
+            <li>
+                <a
+                    href="#contact"
+                    class="transition hover:text-indigo-300"
+                >
+                    Contact Me
+                </a>
+            </li>
 
-    <div class="hero-content">
-        <h1>
-            AI Engineer &
-            Python Backend Developer
-        </h1>
+            <li>
+                <a
+                    href="{{ portfolio.links.resume }}"
+                    target="_blank"
+                    class="transition hover:text-indigo-300"
+                >
+                    Resume
+                </a>
+            </li>
 
-        <p class="hero-text">
-            Building production-focused AI systems
-            using existing LLM models, FastAPI, and Python.
-            Interested in backend engineering,
-            retrieval systems, local LLMs,
-            and applied machine learning.
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<main
+    class="
+        mx-auto
+        max-w-7xl
+        px-6
+        md:px-10
+    "
+>
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section
+    id="about"
+    class="
+        grid
+        items-center
+        gap-12
+        py-16
+        md:py-20
+        lg:grid-cols-[1.2fr_0.8fr]
+    "
+>
+
+
+    <!-- LEFT -->
+
+    <div>
+
+        <p
+            class="
+                mb-2
+                text-base
+                font-semibold
+                text-white/75
+                md:text-lg
+            "
+        >
+            Hey, I'm
         </p>
 
-        <div class="tags">
-            <span>AI / LLM APIs</span>
-            <span>AI Frameworks</span>
-            <span>Retrieval Systems</span>
-            <span>Data & Machine Learning</span>
-            <span>Database & Caching</span>
-            <span>Version Control / Containerization / CI/CD</span>
+
+        <h1
+            class="
+                text-4xl
+                font-extrabold
+                tracking-tight
+                md:text-5xl
+            "
+        >
+            {{ portfolio.name }}
+        </h1>
+
+
+        <p
+            class="
+                mt-1
+                text-sm
+                text-white/60
+                md:text-base
+            "
+        >
+            Based in {{ portfolio.location }}
+        </p>
+
+
+        <div
+            class="
+                my-5
+                h-1
+                w-full
+                max-w-2xl
+                rounded-full
+                bg-white/25
+            "
+        ></div>
+
+
+        <h2
+            class="
+                text-4xl
+                font-extrabold
+                leading-tight
+                md:text-5xl
+            "
+        >
+            {{ portfolio.title }}
+        </h2>
+
+
+        <p
+            class="
+                mt-2
+                text-lg
+                font-medium
+                text-white/75
+                md:text-xl
+            "
+        >
+            {{ portfolio.role }}
+        </p>
+
+
+        <div
+            class="
+                my-5
+                h-1
+                w-full
+                max-w-2xl
+                rounded-full
+                bg-white/25
+            "
+        ></div>
+
+
+        <!-- TECH PILLS -->
+
+        <div>
+
+            <h3
+                class="
+                    mb-3
+                    text-lg
+                    font-bold
+                "
+            >
+                Tech Stack
+            </h3>
+
+
+            <div
+                class="
+                    flex
+                    flex-wrap
+                    gap-2
+                "
+            >
+
+                {% for technology in portfolio.tech_pills %}
+
+                    <span
+                        class="
+                            rounded-full
+                            border
+                            border-white/15
+                            bg-white/10
+                            px-3
+                            py-1
+                            text-xs
+                            font-medium
+                            text-white/80
+                            backdrop-blur-md
+                            transition
+                            hover:bg-white/20
+                        "
+                    >
+                        {{ technology }}
+                    </span>
+
+                {% endfor %}
+
+            </div>
+
         </div>
 
-        <div class="buttons">
-            <a class="btn primary "href="#projects">
-                View Projects
-            </a>
 
-            <a class="btn secondary" href="/static/assets/Ganesh-Resume.pdf" target="_blank">
+        <!-- DESCRIPTION -->
+
+        <p
+            class="
+                mt-6
+                max-w-2xl
+                text-sm
+                leading-relaxed
+                text-white/65
+                md:text-base
+            "
+        >
+            {{ portfolio.short_description }}
+        </p>
+
+
+        <!-- BUTTONS -->
+
+        <div
+            class="
+                mt-7
+                flex
+                flex-wrap
+                gap-3
+            "
+        >
+
+            <a
+                href="{{ portfolio.links.resume }}"
+                target="_blank"
+                class="
+                    rounded-lg
+                    border
+                    border-white/15
+                    bg-indigo-500
+                    px-5
+                    py-2.5
+                    text-sm
+                    font-medium
+                    backdrop-blur-md
+                    transition
+                    hover:bg-indigo-600
+                "
+            >
                 Resume
             </a>
 
-            <a class="btn secondary" href="https://github.com/GaneshSharmaa" target="_blank">
+
+            <a
+                href="{{ portfolio.links.github }}"
+                target="_blank"
+                class="
+                    rounded-lg
+                    border
+                    border-white/15
+                    bg-white/10
+                    px-5
+                    py-2.5
+                    text-sm
+                    font-medium
+                    backdrop-blur-md
+                    transition
+                    hover:bg-indigo-500
+                "
+            >
                 GitHub
             </a>
 
-            <a class="btn secondary" href="https://www.linkedin.com/in/ganeshsharmaa/" target="_blank">
+
+            <a
+                href="{{ portfolio.links.linkedin }}"
+                target="_blank"
+                class="
+                    rounded-lg
+                    border
+                    border-white/15
+                    bg-white/10
+                    px-5
+                    py-2.5
+                    text-sm
+                    font-medium
+                    backdrop-blur-md
+                    transition
+                    hover:bg-indigo-500
+                "
+            >
                 LinkedIn
             </a>
+
+
+            <a
+                href="{{ portfolio.links.email }}"
+                class="
+                    rounded-lg
+                    border
+                    border-white/15
+                    bg-white/10
+                    px-5
+                    py-2.5
+                    text-sm
+                    font-medium
+                    backdrop-blur-md
+                    transition
+                    hover:bg-indigo-500
+                "
+            >
+                Email
+            </a>
+
         </div>
+
     </div>
+
+
+
+    <!-- RIGHT -->
+
+    <div
+        class="
+            flex
+            flex-col
+            items-center
+            lg:items-start
+        "
+    >
+
+        <img
+            src="{{ url_for('static', path=portfolio.image) }}"
+            alt="{{ portfolio.name }}"
+            class="
+                h-72
+                w-72
+                rounded-2xl
+                object-cover
+                shadow-2xl
+                md:h-80
+                md:w-80
+            "
+        >
+
+
+        <p
+            class="
+                mt-5
+                max-w-sm
+                text-center
+                text-sm
+                italic
+                leading-relaxed
+                text-white/55
+                lg:text-left
+            "
+        >
+            "{{ portfolio.description }}"
+        </p>
+
+    </div>
+
 </section>
 
-<section id="projects" class="projects-section">
-    <h2>
-        Featured Projects
-    </h2>
 
-    <div class="projects-grid">
-        {% for project in projects %}
-        <div class="project-card">
-            <h3>
-                {{ project.title }}
+
+<!-- =====================================================
+     FEATURED PROJECTS
+====================================================== -->
+
+<section
+    id="projects"
+    class="py-20"
+>
+
+    <div class="mb-10 text-center">
+
+        <p
+            class="
+                mb-2
+                text-xs
+                font-semibold
+                uppercase
+                tracking-widest
+                text-indigo-300
+            "
+        >
+            Selected Work
+        </p>
+
+
+        <h2
+            class="
+                text-4xl
+                font-extrabold
+                md:text-5xl
+            "
+        >
+            Featured Projects
+        </h2>
+
+
+        <p
+            class="
+                mx-auto
+                mt-3
+                max-w-2xl
+                text-sm
+                text-white/50
+                md:text-base
+            "
+        >
+            A selection of projects demonstrating my backend,
+            database and AI engineering experience.
+        </p>
+
+    </div>
+
+
+
+    <!-- PROJECT GRID -->
+
+    <div
+        class="
+            grid
+            gap-6
+            md:grid-cols-2
+        "
+    >
+
+        {% for project in portfolio.projects[:4] %}
+
+            <article
+                class="
+                    flex
+                    min-h-72
+                    flex-col
+                    justify-between
+                    rounded-2xl
+                    border
+                    border-white/15
+                    bg-white/10
+                    p-6
+                    backdrop-blur-md
+                    transition
+                    duration-300
+                    hover:-translate-y-1
+                    hover:bg-white/15
+                "
+            >
+
+                <div>
+
+                    <p
+                        class="
+                            text-xs
+                            font-semibold
+                            text-indigo-300
+                        "
+                    >
+                        {{ project.number }}
+                    </p>
+
+
+                    <h3
+                        class="
+                            mt-2
+                            text-xl
+                            font-bold
+                            md:text-2xl
+                        "
+                    >
+                        {{ project.title }}
+                    </h3>
+
+
+                    <p
+                        class="
+                            mt-1
+                            text-sm
+                            font-medium
+                            text-white/55
+                        "
+                    >
+                        {{ project.subtitle }}
+                    </p>
+
+
+                    <p
+                        class="
+                            mt-5
+                            text-sm
+                            leading-relaxed
+                            text-white/65
+                        "
+                    >
+                        {{ project.description }}
+                    </p>
+
+                </div>
+
+
+
+                <div>
+
+                    <!-- PROJECT TECHNOLOGIES -->
+
+                    <div
+                        class="
+                            mt-6
+                            flex
+                            flex-wrap
+                            gap-2
+                        "
+                    >
+
+                        {% for technology in project.technologies %}
+
+                            <span
+                                class="
+                                    rounded-full
+                                    border
+                                    border-white/10
+                                    bg-white/10
+                                    px-3
+                                    py-1
+                                    text-xs
+                                    text-white/70
+                                "
+                            >
+                                {{ technology }}
+                            </span>
+
+                        {% endfor %}
+
+                    </div>
+
+
+
+                    <!-- PROJECT BUTTONS -->
+
+                    <div
+                        class="
+                            mt-5
+                            flex
+                            flex-wrap
+                            gap-3
+                        "
+                    >
+
+                        <a
+                            href="{{ project.live_demo }}"
+                            target="_blank"
+                            class="
+                                rounded-lg
+                                bg-indigo-500
+                                px-4
+                                py-2
+                                text-sm
+                                font-medium
+                                transition
+                                hover:bg-indigo-600
+                            "
+                        >
+                            Live Demo
+                        </a>
+
+
+                        <a
+                            href="{{ project.github }}"
+                            target="_blank"
+                            class="
+                                rounded-lg
+                                bg-indigo-500
+                                px-4
+                                py-2
+                                text-sm
+                                font-medium
+                                transition
+                                hover:bg-indigo-600
+                            "
+                        >
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        {% endfor %}
+
+    </div>
+
+
+
+    <!-- VIEW ALL -->
+
+    <div class="mt-10 text-center">
+
+        <a
+            href="#"
+            class="
+                inline-block
+                rounded-lg
+                border
+                border-white/15
+                bg-white/10
+                px-6
+                py-2.5
+                text-sm
+                font-medium
+                backdrop-blur-md
+                transition
+                hover:bg-white/20
+            "
+        >
+            View All Projects
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TECH STACK
+====================================================== -->
+
+<section
+    id="skills"
+    class="py-20"
+>
+
+    <div class="mb-10 text-center">
+
+        <p
+            class="
+                mb-2
+                text-xs
+                font-semibold
+                uppercase
+                tracking-widest
+                text-indigo-300
+            "
+        >
+            Technologies
+        </p>
+
+
+        <h2
+            class="
+                text-4xl
+                font-extrabold
+                md:text-5xl
+            "
+        >
+            Tech Stack
+        </h2>
+
+    </div>
+
+
+
+    <!-- TECH STACK GRID -->
+
+    <div
+        class="
+            grid
+            overflow-hidden
+            rounded-2xl
+            border
+            border-white/15
+            bg-white/5
+            backdrop-blur-md
+            sm:grid-cols-2
+            lg:grid-cols-3
+        "
+    >
+
+        {% for category, technologies in portfolio.tech_stack.items() %}
+
+            <div
+                class="
+                    min-h-40
+                    border-white/10
+                    p-6
+                    sm:border-r
+                    sm:border-b
+                    lg:border-r
+                "
+            >
+
+                <h3
+                    class="
+                        text-lg
+                        font-bold
+                    "
+                >
+                    {{ category }}
+                </h3>
+
+
+                <div
+                    class="
+                        mt-4
+                        flex
+                        flex-wrap
+                        gap-2
+                    "
+                >
+
+                    {% for technology in technologies %}
+
+                        <span
+                            class="
+                                text-white
+                            "
+                        >
+                            {{ technology }}{% if not loop.last %}, {% endif %}
+                        </span>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT CTA
+====================================================== -->
+
+<section
+    id="contact"
+    class="py-20"
+>
+
+    <div
+        class="
+            rounded-2xl
+            border
+            border-white/15
+            bg-white/10
+            px-6
+            py-12
+            text-center
+            backdrop-blur-md
+            md:px-12
+        "
+    >
+
+        <p
+            class="
+                text-xs
+                font-semibold
+                uppercase
+                tracking-widest
+                text-indigo-300
+            "
+        >
+            Let's Connect
+        </p>
+
+
+        <h2
+            class="
+                mt-3
+                text-3xl
+                font-extrabold
+                md:text-4xl
+            "
+        >
+            Have a project or opportunity?
+        </h2>
+
+
+        <p
+            class="
+                mx-auto
+                mt-4
+                max-w-2xl
+                text-sm
+                leading-relaxed
+                text-white/55
+                md:text-base
+            "
+        >
+            I'm open to discussing backend development,
+            AI engineering and junior software engineering
+            opportunities.
+        </p>
+
+
+        <a
+            href="{{ portfolio.links.email }}"
+            class="
+                mt-7
+                inline-block
+                rounded-lg
+                bg-indigo-500
+                px-6
+                py-3
+                text-sm
+                font-semibold
+                transition
+                hover:bg-indigo-600
+            "
+        >
+            Get In Touch
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer
+    class="
+        border-t
+        border-2
+        border-white/25
+        bg-black/50
+    "
+>
+
+    <div
+        class="
+            mx-auto
+            grid
+            max-w-7xl
+            gap-10
+            px-6
+            py-12
+            md:grid-cols-2
+            md:px-10
+        "
+    >
+
+        <!-- CONTACT -->
+
+        <div>
+
+            <h3 class="font-bold">
+                Contact
             </h3>
 
-            <p>
-                {{ project.description }}
-            </p>
 
-            <div class="project-tags">
-                {% for tech in project.tech_stack %}
-                    <span>{{ tech }}</span>
-                {% endfor %}
+            <div
+                class="
+                    mt-4
+                    space-y-2
+                    text-md
+                    text-white/55
+                "
+            >
+
+                <p>
+                    {{ portfolio.contact.email }}
+                </p>
+
+                <p>
+                    {{ portfolio.contact.phone }}
+                </p>
+
+                <p>
+                    {{ portfolio.contact.location }}
+                </p>
+
             </div>
 
-            <div class="project-buttons">
-                <a class="btn primary" href="/projects/{{ project.slug }}">
-                    Read More
-                </a>
+        </div>
 
-                <a class="btn secondary" href="{{ project.github }}" target="_blank">
+
+
+        <!-- SOCIAL -->
+
+        <div>
+
+            <h3 class="font-bold">
+                Social
+            </h3>
+
+
+            <div
+                class="
+                    mt-4
+                    flex
+                    flex-wrap
+                    gap-6
+                    text-md
+                    text-white/55
+                "
+            >
+
+                <a
+                    href="{{ portfolio.links.github }}"
+                    target="_blank"
+                    class="hover:text-white"
+                >
                     GitHub
                 </a>
+
+
+                <a
+                    href="{{ portfolio.links.linkedin }}"
+                    target="_blank"
+                    class="hover:text-white"
+                >
+                    LinkedIn
+                </a>
+
+
+                <a
+                    href="{{ portfolio.links.x }}"
+                    target="_blank"
+                    class="hover:text-white"
+                >
+                    X
+                </a>
+
             </div>
+
         </div>
-        {% endfor %}
+
     </div>
-</section>
 
-<section id="skills" class="skills-section">
-    <h2>
-        Tech Stack / Frameworks / Skills
-    </h2>
 
-    <div class="skills-grid">
-        <div class="skill-group">
-            <h3>Languages</h3>
-            <div class="tags">
-                <span>Python</span>
-                <span>JavaScript</span>
-            </div>
-        </div>
-        
-        <div class="skill-group">
-            <h3>Databases</h3>
-            <div class="tags">
-                <span>MySQL</span>
-                <span>PostgreSQL</span>
-                <span>Redis (Caching)</span>
-                <span>Pinecone (Vector DB)</span>
-                <span>ChromaDB (Vector DB)</span>
-            </div>
-        </div>
 
-        <div class="skill-group">
-            <h3>AI / LLM</h3>
-            <div class="tags">
-                <span>LLMs</span>
-                <span>Prompt Engineering</span>
-                <span>Retrieval Augmented Generation (RAG)</span>
-                <span>Vector Embeddings</span>
-                <span>OpenAI API</span>
-                <span>Gemini API</span>
-                <span>Hugging Face Inference API</span>
-                <span>Ollama</span>
-                <span>Local Models</span>
-                <span>Hugging Face</span>
-            </div>
-        </div>
+    <!-- COPYRIGHT -->
 
-        <div class="skill-group">
-            <h3>Backend</h3>
-
-            <div class="tags">
-                <span>FastAPI</span>
-                <span>REST APIs</span>
-                <span>Jinja2</span>
-                <span>Docker</span>
-            </div>
-        </div>
-
-        <div class="skill-group">
-            <h3>ML / Data</h3>
-
-            <div class="tags">
-                <span>Scikit-learn</span>
-                <span>Pandas</span>
-                <span>NumPy</span>
-                <span>Matplotlib</span>
-                <span>Data Processing</span>
-                <span>Model Evaluation</span>
-            </div>
-        </div>
-
-        <div class="skill-group">
-            <h3>Tools</h3>
-            <div class="tags">
-                <span>Git</span>
-                <span>GitHub</span>
-                <span>VS Code</span>
-                <span>Linux</span>
-            </div>
-        </div>
+    <div
+        class="
+            border-t
+            border-white/10
+            py-6
+            text-center
+            text-sm
+            text-white/40
+        "
+    >
+        © 2026 {{ portfolio.name }}. All rights reserved.
     </div>
-</section>
 
-<section id="about" class="about-section">
-    <h2>
-        About Me
-    </h2>
-
-    <div class="about-content">
-        <p>
-            I’m an aspiring AI Engineer and
-            Python Backend Developer focused
-            on building practical systems using
-            LLMs, FastAPI, and machine learning.
-
-            I enjoy working on AI-powered
-            applications, backend APIs,
-            document intelligence systems,
-            and production-oriented projects
-            that solve real-world problems.
-        </p>
-
-        <p>
-            Currently, I’m strengthening my
-            skills through hands-on projects in
-            retrieval systems, local LLMs,
-            document processing, and applied
-            machine learning while building a
-            strong backend engineering foundation.
-        </p>
-    </div>
-</section>
-
-<section id="connect" class="connect-section">
-    <h2>
-        Let's Connect
-    </h2>
-
-    <p>
-        Open to internships,
-        backend engineering roles,
-        and AI-related opportunities.
-    </p>
-
-    <div class="connect-buttons">
-        <a class="btn primary" href="mailto: ganesh27sharma09@gmail.com">
-            Email
-        </a>
-
-        <a class="btn secondary" href="https://github.com/GaneshSharmaa" target="_blank">
-            GitHub
-        </a>
-
-        <a class="btn secondary" href="https://www.linkedin.com/in/ganeshsharmaa/" target="_blank">
-            LinkedIn
-        </a>
-
-        <a class="btn secondary" href="https://x.com/Ganesh_Sharmaa" target="_blank">
-            X
-        </a>
-    </div>
-</section>
-
-<footer class="footer">
-    <p>
-        © 2026 Ganesh Sharma
-    </p>
 </footer>
-{% endblock %}
+
+
+</body>
+</html>

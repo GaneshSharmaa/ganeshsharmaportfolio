@@ -1,52 +1,37 @@
-# importing the required modules
+# Importing from the FastAPI modules
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from fastapi import HTTPException
 
-# importing the modules from other files
-from data.projects import projects
+# Importing from the data file
+from data.projects import portfolio
 
-# initializing the app
-app = FastAPI(docs_url = None, redoc_url = None, openapi_url = None)
+# Initializing the app
+app = FastAPI(
+    title = "Ganesh",
+    redoc_url = False,
+    docs_url = False,
+    openapi_url = False,
+    swagger_ui_oauth2_redirect_url = False,
+)
 
-# serve static files
-app.mount("/static", StaticFiles(directory = "static/"), name = "static")
+# Mounting the static files
+app.mount(
+    "/static",
+    StaticFiles(directory="static"),
+    name="static"
+)
 
-# template directory
-templates = Jinja2Templates(directory = "templates/")
+templates = Jinja2Templates(directory="templates")
 
-# home route
+# HOME ROUTE
 @app.get("/", include_in_schema = False)
 async def home(request: Request):
-    return templates.TemplateResponse(
-        request = request,
-        name = "index.html",
-        context = {
-            "projects": projects
-        }
-    )
-
-@app.get("/projects/{slug}", include_in_schema = False)
-async def project_page(request: Request, slug: str):
-    project = next(
-        (
-            p for p in projects
-            if p["slug"] == slug
-        ),
-        None
-    )
-
-    if not project:
-        raise HTTPException(
-            status_code = 404,
-            detail = "Project not found"
-        )
 
     return templates.TemplateResponse(
-        request = request,
-        name = "project.html",
-        context = {
-            "project": project
+        request=request,
+        name="index.html",
+        context={
+            "portfolio": portfolio
         }
     )
