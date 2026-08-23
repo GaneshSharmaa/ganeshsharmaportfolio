@@ -180,7 +180,7 @@ portfolio = {
     ],
 
     "contact": {
-        "email": "mailto:ganesh27sharma09@gmail.com",
+        "email": "ganesh27sharma09@gmail.com",
         "phone": "+91 90760-99303"
     },
 
