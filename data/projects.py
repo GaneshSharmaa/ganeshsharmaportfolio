@@ -180,14 +180,14 @@ portfolio = {
     ],
 
     "contact": {
-        "email": "ganesh27sharma09@gmail.com",
+        "email": "mailto:ganesh27sharma09@gmail.com",
         "phone": "+91 90760-99303"
     },
 
     "social": {
         "github": "https://github.com/GaneshSharmaa",
         "linkedin": "https://www.linkedin.com/in/ganeshsharmaa/",
-        "x": "#"
+        "x": "https://x.com/Ganesh_Sharmaa"
     }
 }
 
