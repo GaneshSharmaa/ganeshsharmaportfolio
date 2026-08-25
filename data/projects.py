@@ -19,6 +19,7 @@ portfolio = {
         "github": "https://github.com/GaneshSharmaa",
         "linkedin": "https://www.linkedin.com/in/ganeshsharmaa/",
         "email": "mailto:ganesh27sharma09@gmail.com",
+        "x": "https://x.com/Ganesh_Sharmaa",
     },
 
     "tech_pills": {
