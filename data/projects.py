@@ -105,7 +105,7 @@ portfolio = {
                 "PostgreSQL"
             ],
 
-            "live_demo": "#",
+            "live_demo": "",
             "github": "https://github.com/GaneshSharmaa/CampusSphere--A-Multi-User-Student-and-Academic-Management-Tool"
         },
 
@@ -128,8 +128,8 @@ portfolio = {
                 "Jinja2"
             ],
 
-            "live_demo": "#",
-            "github": "#"
+            "live_demo": "",
+            "github": ""
         },
 
         {
@@ -151,8 +151,8 @@ portfolio = {
                 "Python"
             ],
 
-            "live_demo": "#",
-            "github": "#"
+            "live_demo": "",
+            "github": "https://github.com/GaneshSharmaa/PDF-Summarizer-Project"
         },
 
         {
@@ -174,8 +174,8 @@ portfolio = {
                 "Whisper"
             ],
 
-            "live_demo": "#",
-            "github": "#"
+            "live_demo": "",
+            "github": ""
         }
     ],
 
