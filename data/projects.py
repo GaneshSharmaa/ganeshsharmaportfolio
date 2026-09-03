@@ -15,7 +15,7 @@ portfolio = {
     "image": "../static/assets/ganesh-sharma.jpg",
 
     "links": {
-        "resume": "../static/assets/Ganesh-SDE-Resume.pdf",
+        "resume": "../static/assets/Ganesh-Sharma-Software-Engineer-Resume.pdf",
         "github": "https://github.com/GaneshSharmaa",
         "linkedin": "https://www.linkedin.com/in/ganeshsharmaa/",
         "email": "mailto:ganesh27sharma09@gmail.com",
@@ -106,7 +106,7 @@ portfolio = {
                 "PostgreSQL"
             ],
 
-            "live_demo": "",
+            "live_demo": "https://github.com/GaneshSharmaa/CampusSphere--A-Multi-User-Student-and-Academic-Management-Tool",
             "github": "https://github.com/GaneshSharmaa/CampusSphere--A-Multi-User-Student-and-Academic-Management-Tool"
         },
 
@@ -129,8 +129,8 @@ portfolio = {
                 "Jinja2"
             ],
 
-            "live_demo": "",
-            "github": ""
+            "live_demo": "https://github.com/GaneshSharmaa/Blog-Platform",
+            "github": "https://github.com/GaneshSharmaa/Blog-Platform"
         },
 
         {

@@ -2,3 +2,6 @@
 __pycache__
 .vscode
 node_modules
+*.jpg
+*.ico
+requirements.txt
