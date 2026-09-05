@@ -15,7 +15,7 @@ portfolio = {
     "image": "../static/assets/ganesh-sharma.jpg",
 
     "links": {
-        "resume": "../static/assets/Ganesh-Sharma-Resume.pdf",
+        "resume": "../static/assets/Ganesh-Python-Software-Developer-Resume.pdf",
         "github": "https://github.com/GaneshSharmaa",
         "linkedin": "https://www.linkedin.com/in/ganeshsharmaa/",
         "email": "mailto:ganesh27sharma09@gmail.com",
